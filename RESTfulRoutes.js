@@ -28,10 +28,10 @@ app.get("/data", function(req, res){
 
 //NEW ROUTE -- gets form for new data
 app.get("/data/new", function(req, res){
-   res.render("data/new"); 
+   res.render("new"); 
 });
 
-//CREATEe -- creates new data from new route form
+//CREATE -- creates new data from new route form
 app.post("/data", function(req, res){
    //get data from form and add to campgrounds array
    var name = req.body.dataAttrOne;
@@ -57,7 +57,7 @@ app.get("/datas/:id", function(req, res){
             console.log(err)
         } else {
             console.log(foundData)
-            res.render("data/show", {data: foundData});
+            res.render("show", {data: foundData});
         }
     });
 })
@@ -72,7 +72,7 @@ app.get("/data/:id/secondaryData/new", function(req, res){
         if(err){
             console.log(err)
         } else {
-               res.render("secondaryData/new", {data: foundData}); 
+               res.render("secondaryNew", {data: foundData}); 
         }
     })
 });
@@ -83,7 +83,7 @@ app.post("/data/:id/secondaryData", function(req, res){
     	//handle error
         if(err){
             console.log(err);
-            res.redirect("/campgrounds")
+            res.redirect("/data")
         } else {
         	//create new secondary data
             SecondaryDataset.create(req.body.secondaryData, function(err, newData){
