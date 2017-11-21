@@ -6,7 +6,7 @@ var mongoose = require("mongoose");
 var MainDataset = require("./models/MainDataset");
 var SecondaryDataset = require("./models/SecondaryDataset");
 
-mongoose.connect("mongodb://localhost/yelp_camp");
+mongoose.connect("mongodb://localhost/database");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 
