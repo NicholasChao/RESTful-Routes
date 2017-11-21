@@ -1,4 +1,4 @@
-//APP CONFIG -- MainDataset and SecondaryDataset would link to mongoose models
+//APP CONFIG -- MainDataset and SecondaryDataset link to mongoose models
 var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
